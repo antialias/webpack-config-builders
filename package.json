@@ -1,0 +1,25 @@
+{
+  "name": "webpack-config-builders",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antialias/webpack-config-builders.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/antialias/webpack-config-builders/issues"
+  },
+  "homepage": "https://github.com/antialias/webpack-config-builders#readme",
+  "description": "",
+  "devDependencies": {
+    "mocha": "^2.5.3",
+    "react": "^15.1.0",
+    "react-addons-update": "^15.1.0"
+  }
+}
