@@ -1,5 +1,5 @@
 "use strict";
-const update = require('react-addons-update');
+const update = require('update-object');
 const addLoader = module.exports.addLoader = loader => config => {
     config = Object.assign({module:{}}, config);
     if (undefined === config.module.loaders) {
