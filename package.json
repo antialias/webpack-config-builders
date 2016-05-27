@@ -18,8 +18,9 @@
   "homepage": "https://github.com/antialias/webpack-config-builders#readme",
   "description": "",
   "devDependencies": {
-    "mocha": "^2.5.3",
-    "react": "^15.1.0",
-    "react-addons-update": "^15.1.0"
+    "mocha": "^2.5.3"
+  },
+  "dependencies": {
+    "update-object": "^1.0.0"
   }
 }
