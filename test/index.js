@@ -2,6 +2,38 @@
 const assert = require('assert');
 const helpers = require('..');
 describe.only('webpack helpers', () => {
+    describe('addRule', () => {
+        it('should extend the config when other module.rules are defined', () => {
+            assert.deepEqual(
+                helpers.addRule('def')({module:{rules:['abc']}}),
+                {module:{rules: ['abc', 'def']}}
+            );
+        });
+        it('should extend the config when module is defined, but no rules', () => {
+            assert.deepEqual(
+                helpers.addRule('def')({module:{}}),
+                {module:{rules: ['def']}}
+            );
+        });
+        it('should extend the config when module is undefined', () => {
+            assert.deepEqual(
+                helpers.addRule('def')({}),
+                {module:{rules: ['def']}}
+            );
+        });
+        it('should extend the config when the config is undefined', () => {
+            assert.deepEqual(
+                helpers.addRule('def')(),
+                {module:{rules: ['def']}}
+            );
+        });
+        it('should not modify the original config', () => {
+            let config = {module:{rules: ['def']}};
+            const originalConfig = JSON.parse(JSON.stringify(config));
+            helpers.addRule('abc')(config),
+            assert.deepEqual(originalConfig, config);
+        });
+    });
     describe('addLoader', () => {
         it('should extend the config when other module.loaders are defined', () => {
             assert.deepEqual(

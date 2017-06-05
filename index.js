@@ -1,5 +1,24 @@
 "use strict";
 const update = require('update-object');
+const addRule = module.exports.addRule = rule => config => {
+    config = Object.assign({module:{}}, config);
+    if (undefined === config.module.rules) {
+        config = update(config, {
+            module: {
+                $merge: {
+                    rules: []
+                }
+            }
+        });
+    }
+    return update(config, {
+        module: {
+            rules: {
+                $push: [rule]
+            }
+        }
+    });
+};
 const addLoader = module.exports.addLoader = loader => config => {
     config = Object.assign({module:{}}, config);
     if (undefined === config.module.loaders) {
